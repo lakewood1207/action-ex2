@@ -1,0 +1,14 @@
+name: Deploy1
+on: push
+jobs:
+  lint-build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: setup env
+        uses: actions/checkout@v3
+      - name: lint
+        run: eslint --ext .jsx --fix src
+      - name: build
+        run: vite build
+      - name: test
+        run: vitest run
