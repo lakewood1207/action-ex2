@@ -1,0 +1,7 @@
+name: first
+on: workflow_dispatch
+jobs:
+  first-job:
+    steps:
+      - name: first print line
+        run: echo "hello world"
